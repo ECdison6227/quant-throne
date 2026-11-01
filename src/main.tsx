@@ -1,0 +1,10 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import App from './App';
+import './styles.css';
+import './refine.css';
+import './theme-night.css';
+import './wide.css';
+import {installNativeLinks} from './platform';
+installNativeLinks();
+createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);

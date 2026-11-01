@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">量权</string>
+    <string name="title_activity_main">量权</string>
+    <string name="package_name">top.edsionc.quantthrone</string>
+    <string name="custom_url_scheme">top.edsionc.quantthrone</string>
+</resources>

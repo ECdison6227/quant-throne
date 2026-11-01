@@ -1,0 +1,627 @@
+{
+  "schema": "quant-throne.provenance.v1",
+  "packSha256": "35b3d718d928435d57d428641b909c930ee740c1b97db6072548f4febbd6aa10",
+  "caliber": "Panda Data 日线；股票前复权、指数原始点位。before=决策日之前60个交易日+决策日T（61点），after=T之后20个交易日。close归一化为close/close[T]*100；量比=volume/前60日平均volume。ret20=close[T+20]/close[T]-1；maxDD20=从T到T+20的收盘价峰谷回撤（含T）；maxUp20=期间最大收盘价/close[T]-1。只用close计算收益，不使用股票未复权pre_close。",
+  "queries": [
+    {
+      "id": "e1",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20150103",
+          "endDate": "20150806",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.273Z",
+        "fetchedAt": "2026-10-31T19:09:09.432Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8642,
+        "responseSha256": "4dec6b45cb7d0186866b1643128b7f1032bd6ae3a1e39503f3bd9b2253b50de4",
+        "rowsSha256": "0eeaab9365f039207f652856f07bee0f27c51e8cb19ac1c5067768b940d4d8bb",
+        "rowCount": 146,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20150103",
+          "endDate": "20150806",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.432Z",
+        "fetchedAt": "2026-10-31T19:09:09.527Z",
+        "contentType": "application/json",
+        "responseBytes": 18611,
+        "responseSha256": "c9e3f7c7cff49e0f2ef4ed72eb2fc0838386fb9516e22ce076142c3b4681fdb2",
+        "rowsSha256": "4971dcca88f8e0354dc9164ba0f5bd5ab33652770f83de5a6b08484484e8d255",
+        "rowCount": 146,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20150724",
+          "endDate": "20160224",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.535Z",
+        "fetchedAt": "2026-10-31T19:09:09.667Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8700,
+        "responseSha256": "c6ba0de9fb52869acf8c9cf9c0d5c371c789c3d3819fb91bfa5c04ab73a5c0dc",
+        "rowsSha256": "c61a2b7c62400ab7d2b6f8ac4442eb73e8c2b9d45d763dfdf365fe1086a88de9",
+        "rowCount": 141,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20150724",
+          "endDate": "20160224",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.668Z",
+        "fetchedAt": "2026-10-31T19:09:09.727Z",
+        "contentType": "application/json",
+        "responseBytes": 17976,
+        "responseSha256": "9e8015f9d5a9494a37d14c39b862365fa5520bf711dc9cdae55dc92a1f25ec3e",
+        "rowsSha256": "87381d36313e4aa55fa21e90cda1207cdd39de9f6db02184de270ff4e70e6f82",
+        "rowCount": 141,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20180727",
+          "endDate": "20190227",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.730Z",
+        "fetchedAt": "2026-10-31T19:09:09.839Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8587,
+        "responseSha256": "cabcac0bcb18871f48c11abdfc0403da994dba5a1447666853453f3dbba9e40e",
+        "rowsSha256": "16618707e413645f8f8e6b91f8df323ce26c9bcdbd4019b8fecd6cbe1c4f14ef",
+        "rowCount": 141,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20180727",
+          "endDate": "20190227",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.840Z",
+        "fetchedAt": "2026-10-31T19:09:09.904Z",
+        "contentType": "application/json",
+        "responseBytes": 17976,
+        "responseSha256": "be78f95dbab9a7239639ee9a667335484318d3a9e7f210ace06e13d366839418",
+        "rowsSha256": "36b94b2c946dadd0ecba4aba29f8b5f546e442b7ad91a4d04ee01873808db95b",
+        "rowCount": 141,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20191015",
+          "endDate": "20200517",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:09.906Z",
+        "fetchedAt": "2026-10-31T19:09:10.145Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8667,
+        "responseSha256": "d3696d177df1ddd116d5af4b51d0da183acfb59e98f1faa1c709c88bbff47efd",
+        "rowsSha256": "8ce7d4bd7736576c2082b3819d4ba7f7cc49e18f89f6c7fb3b563b0636a3f3e4",
+        "rowCount": 143,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20191015",
+          "endDate": "20200517",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.145Z",
+        "fetchedAt": "2026-10-31T19:09:10.207Z",
+        "contentType": "application/json",
+        "responseBytes": 18230,
+        "responseSha256": "cef7b9f25750b84396eafeab4e02ebfd6be90cf01595eaa47ba00dac6c2fa301",
+        "rowsSha256": "de3b230a425e15f29c683bd5228aba587b9a5f80b55c2aecf97f803bad7b9e53",
+        "rowCount": 143,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e5",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_stock_daily_pre",
+        "path": "/multi/getStockDailyPre",
+        "query": {
+          "symbols": [
+            "600519.SH"
+          ],
+          "startDate": "20200911",
+          "endDate": "20210414",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.209Z",
+        "fetchedAt": "2026-10-31T19:09:10.361Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 11019,
+        "responseSha256": "bf5a36dcbe69e95fb87aa6cc8693ea796624907f43e5561f5ec0f1886f226fa1",
+        "rowsSha256": "9cb20552611aadc180aaca86b9cdd4acae87dc82dd966ebb88461ccc86be9f27",
+        "rowCount": 141,
+        "fields": [
+          "date",
+          "symbol",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "amount",
+          "num_trades",
+          "pre_close",
+          "limit_up",
+          "limit_down",
+          "name",
+          "trade_status"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20200911",
+          "endDate": "20210414",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.362Z",
+        "fetchedAt": "2026-10-31T19:09:10.424Z",
+        "contentType": "application/json",
+        "responseBytes": 17976,
+        "responseSha256": "12a151cca9523f02690e7f7381642e30e7095ec24c4f5fea3808e6318f474ccc",
+        "rowsSha256": "1d72e474dd3b717a30bcbd643ed49b1066251bc7df4fb76a18ad3d41bbda36ad",
+        "rowCount": 141,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e6",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_stock_daily_pre",
+        "path": "/multi/getStockDailyPre",
+        "query": {
+          "symbols": [
+            "601088.SH"
+          ],
+          "startDate": "20211117",
+          "endDate": "20220620",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.427Z",
+        "fetchedAt": "2026-10-31T19:09:10.759Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 10931,
+        "responseSha256": "b82ec443f2877c3a92db22504a2a8769902cb28a2fffc755b686ca932138f27a",
+        "rowsSha256": "a4cf74eeb3b1c5478e2b4dd1338ab20ef1b4720041e9c0248078bcbf4547b6fc",
+        "rowCount": 142,
+        "fields": [
+          "date",
+          "symbol",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "amount",
+          "num_trades",
+          "pre_close",
+          "limit_up",
+          "limit_down",
+          "name",
+          "trade_status"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20211117",
+          "endDate": "20220620",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.760Z",
+        "fetchedAt": "2026-10-31T19:09:10.823Z",
+        "contentType": "application/json",
+        "responseBytes": 18103,
+        "responseSha256": "184ecd604918077b3520e23146c315960e76b26ad8b6b53e7bc38bbdf3f081d9",
+        "rowsSha256": "2ed02be326e456150a9db4a43c27e9833a66c18a2a30173d3498ee1c43475fc8",
+        "rowCount": 142,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "e7",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20240416",
+          "endDate": "20241117",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.827Z",
+        "fetchedAt": "2026-10-31T19:09:10.933Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8812,
+        "responseSha256": "29ecc8c4b10abade2ce90d9d5d640005e5a170de1581d47e4b74420e63d5d518",
+        "rowsSha256": "45a0f43dd9634a36058d8d4fcd9a224c8f4e2217069ffe019a423e10c6b7e459",
+        "rowCount": 143,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20240416",
+          "endDate": "20241117",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.934Z",
+        "fetchedAt": "2026-10-31T19:09:10.996Z",
+        "contentType": "application/json",
+        "responseBytes": 18230,
+        "responseSha256": "d2c67914c0825d69b2ceb3cb1ab9821284db3ce2b567318619e62cf204a35511",
+        "rowsSha256": "28b672d3d3fe889275466b020495301b269064e1c628bdc4791d5e89f068074f",
+        "rowCount": 143,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "r1",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20170819",
+          "endDate": "20180322",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:10.998Z",
+        "fetchedAt": "2026-10-31T19:09:11.249Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8673,
+        "responseSha256": "1088e2de7f436c3df88a2eb9253d49cb804a9742b1d68233aa4c2889c5bace79",
+        "rowsSha256": "7bfd1d901559a93d09e0547a687718326c3037cd470402690fb425e2e6055dc2",
+        "rowCount": 143,
+        "fields": [
+          "date",
+          "symbol",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20170819",
+          "endDate": "20180322",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:11.250Z",
+        "fetchedAt": "2026-10-31T19:09:11.310Z",
+        "contentType": "application/json",
+        "responseBytes": 18230,
+        "responseSha256": "cd6cadf9b596f5b2f72e9fb128f058091e099b9ede1f3a2fc842d4ac0c0b1583",
+        "rowsSha256": "f065c9d5d22d3ae9883c1c557dd5d5bbbd56cd48b5c135adf3af1c63bc885837",
+        "rowCount": 143,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "r2",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20200204",
+          "endDate": "20200906",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:11.313Z",
+        "fetchedAt": "2026-10-31T19:09:11.540Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8947,
+        "responseSha256": "e792e4bdf360858db4fec4b120d9f0eda5624e5a75d3a990fca83b518db3af0b",
+        "rowsSha256": "cb88f4ec9d49aad4e45a4f0071bcdceabf4e7f1c6e9cf41c6b7f90cf96014ac5",
+        "rowCount": 148,
+        "fields": [
+          "symbol",
+          "date",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20200204",
+          "endDate": "20200906",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:11.541Z",
+        "fetchedAt": "2026-10-31T19:09:11.604Z",
+        "contentType": "application/json",
+        "responseBytes": 18865,
+        "responseSha256": "b38a4b32b8423cf517f6f7528d2a9541094cfea32961249127d7f30f818c03a4",
+        "rowsSha256": "dbefb66b47ffd73fd723161c898a29162be161f188d4cfeab69eb12d0617cfa7",
+        "rowCount": 148,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    },
+    {
+      "id": "r3",
+      "market": {
+        "provider": "Panda Data",
+        "api": "get_index_daily",
+        "path": "/multi/getIndexDaily",
+        "query": {
+          "symbols": [
+            "000300.SH"
+          ],
+          "startDate": "20220524",
+          "endDate": "20221225",
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:11.607Z",
+        "fetchedAt": "2026-10-31T19:09:11.832Z",
+        "contentType": "application/x-parquet",
+        "responseBytes": 8904,
+        "responseSha256": "9e828e95089ee31fd25eda17cbcb337971becc5367d1371440118c50f7f809d9",
+        "rowsSha256": "6dca5c6356aee331267260a5e15a7e6390c907b6d8fc8d696d369d9e67eb1bee",
+        "rowCount": 147,
+        "fields": [
+          "symbol",
+          "date",
+          "amount",
+          "close",
+          "high",
+          "low",
+          "open",
+          "pre_close",
+          "volume"
+        ]
+      },
+      "calendar": {
+        "provider": "Panda Data",
+        "api": "get_trade_cal",
+        "path": "/tradeCalendar/getTradeCalendarData",
+        "query": {
+          "startDate": "20220524",
+          "endDate": "20221225",
+          "exchange": "SH",
+          "isTradingDay": 1,
+          "fields": []
+        },
+        "requestedAt": "2026-10-31T19:09:11.832Z",
+        "fetchedAt": "2026-10-31T19:09:11.889Z",
+        "contentType": "application/json",
+        "responseBytes": 18738,
+        "responseSha256": "87657980911ebbdac437d4415c39330a6dc9ac8e43c3221334e118502816b747",
+        "rowsSha256": "84f11ef32812358b7bffb1c14f325d83d37caff3d559cba49ea7e77ccf60ddc3",
+        "rowCount": 147,
+        "fields": [
+          "next_trade_date",
+          "pretrade_date",
+          "exchange",
+          "is_trade",
+          "nature_date",
+          "month"
+        ]
+      }
+    }
+  ]
+}

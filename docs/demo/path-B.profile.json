@@ -1,0 +1,199 @@
+{
+  "schema": "pandaai.profile.v1",
+  "game": "quant-throne",
+  "version": "0.1.0",
+  "createdAt": "2026-10-31T20:29:28.745Z",
+  "demonstration": {
+    "path": "B",
+    "simulatedBehavior": true
+  },
+  "dimensions": {
+    "risk": {
+      "kind": "preference",
+      "label": "风险偏好",
+      "score": 69,
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s10",
+          "text": "第 23 张 · s10：写规则做样本外检验。偏向承担风险",
+          "effect": "偏向承担风险"
+        },
+        {
+          "cardId": "s19",
+          "text": "第 24 张 · s19：先总结成功模式。偏向承担风险",
+          "effect": "偏向承担风险"
+        }
+      ]
+    },
+    "market": {
+      "kind": "preference",
+      "label": "市场偏好",
+      "score": "futures",
+      "confidence": "mid",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s20",
+          "text": "第 21 张 · s20：建立海外事件清单。选择 hk_us",
+          "effect": "选择 hk_us"
+        },
+        {
+          "cardId": "s26",
+          "text": "第 22 张 · s26：商品与跨期结构。选择 futures",
+          "effect": "选择 futures"
+        }
+      ]
+    },
+    "style": {
+      "kind": "preference",
+      "label": "研究风格",
+      "score": "trend",
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s10",
+          "text": "第 23 张 · s10：写规则做样本外检验。偏向因子",
+          "effect": "偏向因子"
+        },
+        {
+          "cardId": "s19",
+          "text": "第 24 张 · s19：先总结成功模式。偏向趋势",
+          "effect": "偏向趋势"
+        }
+      ]
+    },
+    "info": {
+      "kind": "preference",
+      "label": "信息习惯",
+      "score": "技术报告",
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "e7",
+          "text": "第 16 张 · e7：加仓，信心 90%。调阅 技术报告",
+          "effect": "调阅 技术报告"
+        },
+        {
+          "cardId": "e3",
+          "text": "第 19 张 · e3：观望，信心 90%。调阅 技术报告",
+          "effect": "调阅 技术报告"
+        }
+      ]
+    },
+    "judgement": {
+      "kind": "ability",
+      "label": "读数与校准",
+      "score": null,
+      "confidence": "mid",
+      "uncertain": true,
+      "evidence": [
+        {
+          "cardId": "e1",
+          "text": "第 10 张 · e1：加仓，信心 90%。方向与随后20日涨跌相反",
+          "effect": "方向与随后20日涨跌相反"
+        },
+        {
+          "cardId": "e7",
+          "text": "第 16 张 · e7：加仓，信心 90%。方向与随后20日涨跌一致",
+          "effect": "方向与随后20日涨跌一致"
+        }
+      ]
+    },
+    "discipline": {
+      "kind": "ability",
+      "label": "纪律一致性",
+      "score": 57,
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s29",
+          "text": "第 20 张 · s29：先检验极端情境。遵守既定流程",
+          "effect": "遵守既定流程"
+        },
+        {
+          "cardId": "s19",
+          "text": "第 24 张 · s19：先总结成功模式。为当前机会偏离流程",
+          "effect": "为当前机会偏离流程"
+        }
+      ]
+    },
+    "literacy": {
+      "kind": "ability",
+      "label": "量化基础",
+      "score": 100,
+      "confidence": "mid",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "k1",
+          "text": "第 14 张 · k1：未来函数 / 前视偏差。知识题回答正确",
+          "effect": "知识题回答正确"
+        },
+        {
+          "cardId": "k5",
+          "text": "第 18 张 · k5：不能，需要计入交易成本。知识题回答正确",
+          "effect": "知识题回答正确"
+        }
+      ]
+    }
+  },
+  "conflicts": [],
+  "uncertain": [
+    "judgement"
+  ],
+  "persona": {
+    "id": "trend-rider",
+    "name": "风口骑手",
+    "description": "你会追问风往哪里走，然后决定何时扬帆。"
+  },
+  "recommendations": [
+    {
+      "id": "pandaai-futures-contest",
+      "name": "全国期货模拟赛",
+      "url": "https://www.pandaaiquant.com/contest/",
+      "reason": "第 24 张 · s19：先总结成功模式。偏向趋势；第 22 张 · s26：商品与跨期结构。选择 futures 研究风格匹配；市场偏好匹配；在模拟环境中实践期货交易。基础 L1，约 30 分钟。",
+      "level": 1,
+      "advanced": false
+    },
+    {
+      "id": "skill-ma-crossover-signal",
+      "name": "均线交叉信号",
+      "url": "https://github.com/quantskills/skill-ma-crossover-signal",
+      "reason": "第 24 张 · s19：先总结成功模式。偏向趋势；第 22 张 · s26：商品与跨期结构。选择 futures 研究风格匹配；市场偏好匹配；均线交叉信号生成。基础 L2，约 20 分钟。",
+      "level": 2,
+      "advanced": false
+    },
+    {
+      "id": "skill-a-share-market-participation",
+      "name": "市场宽度与拥挤度",
+      "url": "https://github.com/quantskills/skill-a-share-market-participation",
+      "reason": "第 24 张 · s19：先总结成功模式。偏向趋势；第 22 张 · s26：商品与跨期结构。选择 futures 研究风格匹配；市场宽度、成交集中度、拥挤度。基础 L1，约 20 分钟。",
+      "level": 1,
+      "advanced": false
+    }
+  ],
+  "notRecommended": [],
+  "nextTask": {
+    "id": "T-trend",
+    "title": "亲手调一组均线参数",
+    "minutes": 10,
+    "data": [
+      "e1",
+      "e5",
+      "e7"
+    ],
+    "resourceId": "skill-ma-crossover-signal"
+  },
+  "revisions": [],
+  "dataSource": {
+    "provider": "Panda Data",
+    "fetchedAt": "2026-10-31T19:09:11.889Z",
+    "caliber": "Panda Data 日线；股票前复权、指数原始点位。before=决策日之前60个交易日+决策日T（61点），after=T之后20个交易日。close归一化为close/close[T]*100；量比=volume/前60日平均volume。ret20=close[T+20]/close[T]-1；maxDD20=从T到T+20的收盘价峰谷回撤（含T）；maxUp20=期间最大收盘价/close[T]-1。只用close计算收益，不使用股票未复权pre_close。"
+  },
+  "disclaimer": "游戏测评结果，不构成投资建议"
+}

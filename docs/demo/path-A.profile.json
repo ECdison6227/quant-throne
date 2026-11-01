@@ -1,0 +1,209 @@
+{
+  "schema": "pandaai.profile.v1",
+  "game": "quant-throne",
+  "version": "0.1.0",
+  "createdAt": "2026-10-31T20:29:28.729Z",
+  "demonstration": {
+    "path": "A",
+    "simulatedBehavior": true
+  },
+  "dimensions": {
+    "risk": {
+      "kind": "preference",
+      "label": "风险偏好",
+      "score": 34,
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s30",
+          "text": "第 23 张 · s30：可复核的研究档案。偏向控制风险",
+          "effect": "偏向控制风险"
+        },
+        {
+          "cardId": "s6",
+          "text": "第 24 张 · s6：按原规则复盘。偏向控制风险",
+          "effect": "偏向控制风险"
+        }
+      ]
+    },
+    "market": {
+      "kind": "preference",
+      "label": "市场偏好",
+      "score": "a_share",
+      "confidence": "mid",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s26",
+          "text": "第 20 张 · s26：指数与资产配置。选择 etf_fund",
+          "effect": "选择 etf_fund"
+        },
+        {
+          "cardId": "s20",
+          "text": "第 21 张 · s20：先守住已有观察线。选择 a_share",
+          "effect": "选择 a_share"
+        }
+      ]
+    },
+    "style": {
+      "kind": "preference",
+      "label": "研究风格",
+      "score": "value",
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s20",
+          "text": "第 21 张 · s20：先守住已有观察线。偏向价值",
+          "effect": "偏向价值"
+        },
+        {
+          "cardId": "s30",
+          "text": "第 23 张 · s30：可复核的研究档案。偏向价值",
+          "effect": "偏向价值"
+        }
+      ]
+    },
+    "info": {
+      "kind": "preference",
+      "label": "信息习惯",
+      "score": "直接判断",
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "e2",
+          "text": "第 16 张 · e2：减仓，信心 65%。未调阅报告",
+          "effect": "未调阅报告"
+        },
+        {
+          "cardId": "e4",
+          "text": "第 19 张 · e4：减仓，信心 65%。未调阅报告",
+          "effect": "未调阅报告"
+        }
+      ]
+    },
+    "judgement": {
+      "kind": "ability",
+      "label": "读数与校准",
+      "score": 78,
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "e2",
+          "text": "第 16 张 · e2：减仓，信心 65%。方向与随后20日涨跌一致",
+          "effect": "方向与随后20日涨跌一致"
+        },
+        {
+          "cardId": "e4",
+          "text": "第 19 张 · e4：减仓，信心 65%。方向与随后20日涨跌相反",
+          "effect": "方向与随后20日涨跌相反"
+        }
+      ]
+    },
+    "discipline": {
+      "kind": "ability",
+      "label": "纪律一致性",
+      "score": 83,
+      "confidence": "high",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "s30",
+          "text": "第 23 张 · s30：可复核的研究档案。遵守既定流程",
+          "effect": "遵守既定流程"
+        },
+        {
+          "cardId": "s6",
+          "text": "第 24 张 · s6：按原规则复盘。遵守既定流程",
+          "effect": "遵守既定流程"
+        }
+      ]
+    },
+    "literacy": {
+      "kind": "ability",
+      "label": "量化基础",
+      "score": 100,
+      "confidence": "mid",
+      "uncertain": false,
+      "evidence": [
+        {
+          "cardId": "k6",
+          "text": "第 14 张 · k6：未必，还要看相关性。知识题回答正确",
+          "effect": "知识题回答正确"
+        },
+        {
+          "cardId": "k5",
+          "text": "第 18 张 · k5：不能，需要计入交易成本。知识题回答正确",
+          "effect": "知识题回答正确"
+        }
+      ]
+    }
+  },
+  "conflicts": [
+    {
+      "dims": [
+        "literacy"
+      ],
+      "text": "自述为 L1，本局知识题表现对应基础带 L3；题目样本有限，不代表编程或完整研究能力。"
+    }
+  ],
+  "uncertain": [],
+  "persona": {
+    "id": "night-watch",
+    "name": "竹林守夜人",
+    "description": "愿意等待价值，也记得为明天留一盏灯。"
+  },
+  "recommendations": [
+    {
+      "id": "skill-a-share-stock-dossier",
+      "name": "单股尽调报告",
+      "url": "https://github.com/quantskills/skill-a-share-stock-dossier",
+      "reason": "第 23 张 · s30：可复核的研究档案。偏向价值；第 21 张 · s20：先守住已有观察线。选择 a_share 研究风格匹配；市场偏好匹配；单只股票的可溯源尽调报告。基础 L1，约 20 分钟。",
+      "level": 1,
+      "advanced": false
+    },
+    {
+      "id": "skill-dividend-yield-scan",
+      "name": "股息率扫描",
+      "url": "https://github.com/quantskills/skill-dividend-yield-scan",
+      "reason": "第 23 张 · s30：可复核的研究档案。偏向价值；第 21 张 · s20：先守住已有观察线。选择 a_share 研究风格匹配；市场偏好匹配；股息率、连续分红、除权日历。基础 L1，约 20 分钟。",
+      "level": 1,
+      "advanced": false
+    },
+    {
+      "id": "pandaai-qube",
+      "name": "Qube 自然语言策略",
+      "url": "https://www.pandaaiquant.com/agent_quant/",
+      "reason": "第 23 张 · s30：可复核的研究档案。偏向价值；第 21 张 · s20：先守住已有观察线。选择 a_share 市场偏好匹配；用自然语言描述想法，生成可回测的策略。基础 L0，约 15 分钟。",
+      "level": 0,
+      "advanced": false
+    }
+  ],
+  "notRecommended": [
+    {
+      "id": "pandaai-factor-contest",
+      "reason": "第四届因子大赛需要 L3，本局知识表现约为 L1，先完成入门任务再探索。"
+    }
+  ],
+  "nextTask": {
+    "id": "T-value",
+    "title": "为竹林挑一段更稳的旅程",
+    "minutes": 10,
+    "data": [
+      "e3",
+      "e4",
+      "e6"
+    ],
+    "resourceId": "skill-dividend-yield-scan"
+  },
+  "revisions": [],
+  "dataSource": {
+    "provider": "Panda Data",
+    "fetchedAt": "2026-10-31T19:09:11.889Z",
+    "caliber": "Panda Data 日线；股票前复权、指数原始点位。before=决策日之前60个交易日+决策日T（61点），after=T之后20个交易日。close归一化为close/close[T]*100；量比=volume/前60日平均volume。ret20=close[T+20]/close[T]-1；maxDD20=从T到T+20的收盘价峰谷回撤（含T）；maxUp20=期间最大收盘价/close[T]-1。只用close计算收益，不使用股票未复权pre_close。"
+  },
+  "disclaimer": "游戏测评结果，不构成投资建议"
+}

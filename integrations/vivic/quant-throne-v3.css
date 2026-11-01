@@ -1,0 +1,100 @@
+/* 量权 × Vivic bridge v3 — follows Vivic tokens: Geist, #1d1d1f ink, glass white, pill radius, hairline strokes. */
+#qt-launch{position:fixed;top:16px;right:20px;z-index:9990;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 5px;border:1px solid var(--stroke-secondary,#1d1d1f12);border-radius:999px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);color:var(--text-primary,#1d1d1f);font:500 14px/1 "Geist Variable","PingFang SC","Noto Sans SC",system-ui,sans-serif;letter-spacing:.02em;cursor:pointer;box-shadow:0 1px 2px #1d1d1f0f,0 8px 24px -12px #1d1d1f40;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s,background .2s}
+#qt-launch:hover{transform:translateY(-1px);background:rgba(255,255,255,.96);box-shadow:0 1px 2px #1d1d1f14,0 12px 28px -12px #1d1d1f55}
+#qt-launch:active{transform:scale(.97)}
+#qt-launch:focus-visible{outline:2px solid #1d1d1f;outline-offset:2px}
+#qt-launch .qt-launch-icon{width:30px;height:30px;border-radius:50%;object-fit:cover;display:block}
+#qt-launch .qt-launch-dot{width:7px;height:7px;border-radius:50%;background:#00a665;box-shadow:0 0 0 3px #00a66526;display:none}
+#qt-launch .qt-launch-dot.is-on{display:block}
+html.qt-lock,html.qt-lock body{overflow:hidden}
+
+.qt-overlay{position:fixed;inset:0;z-index:10000;font:400 15px/1.55 "Geist Variable","PingFang SC","Noto Sans SC",system-ui,sans-serif;color:#1d1d1f;-webkit-font-smoothing:antialiased}
+.qt-overlay[hidden]{display:none}
+.qt-overlay *{box-sizing:border-box}
+.qt-overlay .qt-scrim{position:absolute;inset:0;background:rgba(243,247,251,.62);-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2);opacity:0;transition:opacity .22s ease}
+.qt-overlay.is-open .qt-scrim{opacity:1}
+.qt-overlay .qt-shell{--qt-h:min(calc(100dvh - 64px),780px);position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:28px;transform:translate(-50%,-48%) scale(.98);opacity:0;transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .22s ease}
+.qt-overlay.is-open .qt-shell{transform:translate(-50%,-50%);opacity:1}
+
+/* phone stage: fixed 390:844, height-driven, never stretched */
+.qt-overlay .qt-stage{flex:none;height:var(--qt-h);aspect-ratio:390/844;width:calc(var(--qt-h) * 390 / 844)}
+.qt-overlay .qt-phone{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:#0d1512;box-shadow:0 0 0 10px #fff,0 0 0 11px #1d1d1f14,0 40px 80px -30px #1d1d1f66}
+.qt-overlay .qt-frame{display:block;width:100%;height:100%;border:0;background:#0d1512}
+.qt-overlay .qt-poster{all:unset;box-sizing:border-box;position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:0 24px 56px;background:#0d1512 center/cover no-repeat;cursor:pointer}
+.qt-overlay .qt-poster::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(8,14,12,.82) 78%)}
+.qt-overlay .qt-poster-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;color:#f4efe2}
+.qt-overlay .qt-poster-icon{width:64px;height:64px;border-radius:18px;box-shadow:0 8px 24px #0007}
+.qt-overlay .qt-poster-title{font:600 40px/1.1 "Noto Serif SC","Songti SC",serif;letter-spacing:.12em}
+.qt-overlay .qt-poster-sub{font-size:15px;opacity:.82}
+.qt-overlay .qt-play{margin-top:12px;display:inline-flex;align-items:center;justify-content:center;min-width:180px;height:52px;padding:0 28px;border-radius:999px;background:#f4efe2;color:#14201b;font-size:17px;font-weight:600;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.qt-overlay .qt-poster:hover .qt-play{transform:translateY(-2px)}
+.qt-overlay .qt-poster:focus-visible .qt-play{outline:2px solid #f4efe2;outline-offset:3px}
+
+/* side panel */
+.qt-overlay .qt-panel{flex:none;width:340px;max-height:var(--qt-h);overflow:auto;display:flex;flex-direction:column;gap:16px;padding:24px;border-radius:28px;background:rgba(255,255,255,.9);border:1px solid #1d1d1f12;box-shadow:0 24px 60px -30px #1d1d1f55}
+.qt-overlay .qt-head{display:flex;align-items:center;gap:12px}
+.qt-overlay .qt-head-icon{width:44px;height:44px;border-radius:12px;flex:none}
+.qt-overlay .qt-head-text{display:flex;flex-direction:column;gap:2px}
+.qt-overlay .qt-head-text strong{font-size:19px;font-weight:600;letter-spacing:.01em}
+.qt-overlay .qt-head-text span{font-size:13px;color:#1d1d1f80}
+.qt-overlay .qt-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.qt-overlay .qt-step{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:16px;transition:background .2s}
+.qt-overlay .qt-step.is-now{background:#1d1d1f0a}
+.qt-overlay .qt-step-n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;border:1px solid #1d1d1f24;color:#1d1d1f99}
+.qt-overlay .qt-step.is-now .qt-step-n{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
+.qt-overlay .qt-step.is-done .qt-step-n{background:#00a665;color:#fff;border-color:#00a665;font-size:0}
+.qt-overlay .qt-step.is-done .qt-step-n::after{content:"✓";font-size:13px}
+.qt-overlay .qt-step b{display:block;font-size:15px;font-weight:600}
+.qt-overlay .qt-step small{display:block;font-size:13px;color:#1d1d1f80;margin-top:1px}
+.qt-overlay .qt-persona{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:20px;background:linear-gradient(135deg,#f6f5f2,#eef3ee);border:1px solid #1d1d1f0f;animation:qt-rise .35s cubic-bezier(.2,.8,.2,1)}
+.qt-overlay .qt-persona[hidden],.qt-overlay .qt-cards[hidden],.qt-overlay [hidden]{display:none}
+.qt-overlay .qt-persona-label{font-size:12px;color:#1d1d1f80;letter-spacing:.08em}
+.qt-overlay .qt-persona-name{font:600 24px/1.25 "Noto Serif SC","Songti SC",serif}
+.qt-overlay .qt-persona-meta{font-size:14px;color:#1d1d1fb3}
+.qt-overlay .qt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.qt-overlay .qt-mini{position:relative;height:76px;padding:10px;border-radius:14px;background:#fff;border:1px solid #1d1d1f14;box-shadow:0 6px 16px -10px #1d1d1f40;display:flex;flex-direction:column;justify-content:flex-end;animation:qt-rise .4s cubic-bezier(.2,.8,.2,1) both}
+.qt-overlay .qt-mini:nth-child(2){animation-delay:.06s}.qt-overlay .qt-mini:nth-child(3){animation-delay:.12s}
+.qt-overlay .qt-mini-bar{position:absolute;top:10px;left:10px;right:10px;height:6px;border-radius:3px;background:#1d1d1f12}
+.qt-overlay .qt-mini-bar::after{content:"";position:absolute;inset:0 40% 0 0;border-radius:3px;background:#1b4537}
+.qt-overlay .qt-mini:nth-child(2) .qt-mini-bar::after{background:#b8860b;right:25%}
+.qt-overlay .qt-mini:nth-child(3) .qt-mini-bar::after{background:#c23b22;right:55%}
+.qt-overlay .qt-mini b{font-size:13px;font-weight:600}
+.qt-overlay .qt-cards.is-saved .qt-mini{border-color:#00a66555}
+.qt-overlay .qt-status{margin:0;font-size:14px;color:#1d1d1fb3}
+.qt-overlay .qt-primary{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-height:50px;padding:0 20px;border-radius:999px;background:#1d2938;color:#fff;font-size:16px;font-weight:600;cursor:pointer;transition:transform .15s,opacity .15s,background .2s}
+.qt-overlay .qt-primary:hover{background:#111a26}
+.qt-overlay .qt-primary:active{transform:scale(.98)}
+.qt-overlay .qt-primary:disabled{opacity:.32;cursor:default}
+.qt-overlay .qt-primary:focus-visible{outline:2px solid #1d2938;outline-offset:3px}
+.qt-overlay.is-busy .qt-primary{opacity:.7}
+.qt-overlay .qt-more{display:flex;gap:8px;flex-wrap:wrap}
+.qt-overlay .qt-link{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #1d1d1f1f;background:rgba(255,255,255,.6);font-size:14px;color:#1d1d1f;cursor:pointer;transition:background .2s}
+.qt-overlay .qt-link:hover{background:#fff}
+.qt-overlay .qt-link:focus-visible{outline:2px solid #1d1d1f;outline-offset:2px}
+.qt-overlay .qt-foot{margin:0;font-size:12px;color:#1d1d1f66}
+.qt-overlay .qt-close{all:unset;box-sizing:border-box;position:absolute;top:-6px;right:-52px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.94);border:1px solid #1d1d1f14;color:#1d1d1f;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 18px -8px #1d1d1f55}
+.qt-overlay .qt-close:hover{background:#fff}
+.qt-overlay .qt-close:focus-visible{outline:2px solid #1d1d1f;outline-offset:2px}
+.qt-overlay.has-profile .qt-steps{display:none}
+@keyframes qt-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* narrower desktops: shrink phone first, keep ratio */
+@media (max-width:1000px) and (min-width:761px){.qt-overlay .qt-shell{--qt-h:min(calc(100dvh - 64px),700px);gap:20px}.qt-overlay .qt-panel{width:300px}.qt-overlay .qt-close{right:-4px;top:-48px}}
+@media (max-height:620px) and (min-width:761px){.qt-overlay .qt-shell{--qt-h:calc(100dvh - 32px)}.qt-overlay .qt-close{right:-4px;top:4px;transform:translateX(52px)}}
+
+/* phones: the game is already portrait, so it fills the screen; the panel becomes a bottom sheet */
+@media (max-width:760px){
+ #qt-launch{top:max(12px,env(safe-area-inset-top));right:14px;height:40px}
+ .qt-overlay .qt-scrim{background:#0d1512}
+ .qt-overlay .qt-shell{--qt-h:100dvh;inset:0;left:0;top:0;transform:translateY(12px);display:block}
+ .qt-overlay.is-open .qt-shell{transform:none}
+ .qt-overlay .qt-stage{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+ .qt-overlay .qt-phone{border-radius:0;box-shadow:none}
+ .qt-overlay .qt-poster{padding-bottom:max(48px,calc(env(safe-area-inset-bottom) + 32px))}
+ .qt-overlay .qt-panel{position:absolute;left:0;right:0;bottom:0;width:auto;max-height:72dvh;padding:20px 20px max(20px,env(safe-area-inset-bottom));border-radius:26px 26px 0 0;border:0;background:rgba(255,255,255,.97);transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.2,1);gap:14px}
+ .qt-overlay .qt-panel::before{content:"";align-self:center;width:40px;height:5px;border-radius:3px;background:#1d1d1f24;margin:-8px 0 0}
+ .qt-overlay.has-profile:not(.is-playing) .qt-panel,.qt-overlay.is-transfer .qt-panel{transform:none}
+ .qt-overlay .qt-steps{display:none}
+ .qt-overlay .qt-close{top:max(10px,env(safe-area-inset-top));right:10px;width:36px;height:36px;font-size:20px;background:rgba(255,255,255,.88)}
+}
+@media (prefers-reduced-motion:reduce){#qt-launch,.qt-overlay .qt-shell,.qt-overlay .qt-scrim,.qt-overlay .qt-panel,.qt-overlay .qt-play{transition:none!important}.qt-overlay .qt-persona,.qt-overlay .qt-mini{animation:none!important}}

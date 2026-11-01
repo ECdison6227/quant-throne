@@ -1,0 +1,255 @@
+/* ==========================================================================
+   v0.3 "Night Bamboo" theme — dark surfaces, ivory type, gold/vermilion accents.
+   Loaded last; it only changes colour, surface and type weight, not layout.
+   ========================================================================== */
+:root{
+ --bg:#0b1a16;--surface:#12251f;--card:#172e26;--raise:#1e3a30;--line:#2b463b;
+ --ivory:#efe7d2;--muted:#a3b39c;--faint:#7d8f78;--gold:#d8ad5c;--rust:#df6a47;--jade:#6cc093;
+ --ink:#efe7d2;
+ color:var(--ivory);background:var(--bg);
+}
+body{background:radial-gradient(120% 70% at 50% 0%,#17332a 0%,var(--bg) 60%) fixed,var(--bg);color:var(--ivory)}
+.app{background:transparent;box-shadow:none;color:var(--ivory)}
+.app button{color:inherit;border-color:var(--line)}
+.app a{color:var(--gold)}
+.app p,.app li{color:inherit}
+.app h1,.app h2,.app h3{color:var(--ivory)}
+
+/* ---- Top bar ---- */
+.app .topbar{background:#0b1a16cc;backdrop-filter:blur(10px);border-bottom:1px solid #ffffff10}
+.app .brand{color:var(--ivory)}
+.app .brand small{color:var(--faint)}
+.app .brand-seal{background:var(--rust);color:#fff4e3;border-radius:4px}
+.app .icon-button{color:var(--ivory)}
+.app .icon-button:active{background:#ffffff14}
+.progress-label{color:var(--muted)!important;font-size:13px!important}
+.progress-track{background:#ffffff18!important}
+.progress-track i{background:var(--gold)!important}
+
+/* ---- Welcome ---- */
+.app .welcome{background:var(--bg)}
+.app .welcome-art{background-image:url("/assets/art/background.webp");background-position:60% 0;background-size:cover}
+.app .welcome-art:after{background:linear-gradient(180deg,#0b1a1600 25%,#0b1a16cc 55%,#0b1a16 72%)}
+.app .panda-partner{color:var(--muted);font-size:13px}
+.app .panda-partner b{color:var(--gold)}
+.app .welcome-copy h1{color:var(--ivory);text-shadow:0 6px 30px #0008}
+.app .welcome-copy h1 span{color:var(--gold)}
+.app .title-line{color:var(--muted)}
+.app .title-line span{background:#ffffff30}
+.app .intro{color:var(--ivory);font-size:20px}
+.chip-caption{color:var(--muted)!important;font-size:13px!important}
+.app .chip{background:#ffffff0d;border-color:#ffffff24;color:var(--ivory);font-size:16px}
+.app .chip.on{background:var(--gold);border-color:var(--gold);color:#1a1405;font-weight:600}
+.app .primary{background:var(--gold);border-color:var(--gold);color:#1a1405;font-weight:600}
+.app .primary:hover{background:#e4bb6b}
+.app .begin{box-shadow:0 12px 30px #d8ad5c33;font-size:19px}
+.app .privacy-note{color:var(--faint);font-size:13px}
+.app .text-button{color:var(--muted)}
+.app .demo-label{color:var(--gold)}
+
+/* ---- Gauges ---- */
+.app .gauge span{color:var(--muted);font-size:13px}
+svg.gauge-icon{width:36px;height:36px;overflow:visible}
+.gauge-empty{fill:#ffffff1c}
+.gauge-fill{fill:var(--ivory)}
+.gauge-level{transition:y .6s var(--ease-out),height .6s var(--ease-out)}
+.gauge.danger .gauge-fill{fill:var(--rust)}
+.gauge.danger span{color:var(--rust)!important}
+.gauge.up .gauge-delta{color:var(--jade)!important}
+.gauge.down .gauge-delta{color:var(--rust)!important}
+.gauge-delta{font-size:18px!important;text-shadow:0 2px 8px #000a}
+.app .change-dot{background:var(--gold);box-shadow:0 0 10px var(--gold)}
+@media (max-height:700px){svg.gauge-icon{width:30px;height:30px}}
+
+/* ---- Card ---- */
+.app .card-back{background:#1a332b;box-shadow:0 10px 30px #0006}
+.app .swipe-card{background:var(--card);border:1px solid #ffffff14;box-shadow:0 24px 50px #0009,0 2px 0 #ffffff0d inset;color:var(--ivory)}
+.app .character{background:#10231d}
+.app .character:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(180deg,#172e2600,var(--card));pointer-events:none}
+.app .card-kind{background:#0b1a16b3;color:var(--gold);backdrop-filter:blur(6px);font-size:13px}
+.app .card-head .card-kind{background:none;color:var(--gold)}
+.card-head img{border-color:#ffffff22!important;background:#10231d!important}
+.app .card-content:before{display:none}
+.app .role{color:var(--muted)}
+.app .card-content h2{color:var(--ivory);font-size:26px}
+.app .card-content .card-text{color:#d9d2bd;font-size:17px}
+.app .chart{color:var(--ivory)}
+.app .chart-top{color:var(--faint);font-size:13px}
+.chart-source{color:var(--gold)!important}
+.app .chart text{fill:var(--faint)}
+.chart-after{stroke:var(--rust)}
+.chart-dot.after{fill:var(--rust)}
+.app .report-button{border-color:#ffffff2a;color:var(--gold);font-size:15px}
+.report.open{background:#0f211b!important}
+.app .report-tabs button{border-color:#ffffff22;color:var(--muted);font-size:15px}
+.app .report-tabs button.chosen{background:var(--gold);border-color:var(--gold);color:#1a1405}
+.report p{color:var(--ivory)!important;font-size:15px!important}
+.app .swipe-stamp{background:#0b1a16ee;color:var(--rust);font-size:22px;box-shadow:0 6px 20px #0008}
+.app .swipe-stamp.right{color:var(--jade)}
+.app .swipe-stamp.up{color:var(--gold)}
+
+/* ---- Choice buttons ---- */
+.app .choices button{background:#ffffff0c;border:1px solid #ffffff1f;color:var(--ivory);font-size:17px;min-height:58px}
+.app .choices button:last-child{background:#ffffff12;border-color:#ffffff2a}
+.app .choices span{color:var(--gold)}
+.app .choices button.lean{background:var(--gold);border-color:var(--gold);color:#1a1405}
+.app .choices button.lean span{color:#1a1405}
+.app .gesture-help{color:var(--faint);font-size:14px}
+.app .demo-bar{color:var(--gold)}
+.app .demo-bar button{border-color:#d8ad5c66;color:var(--gold)}
+
+/* ---- Modals & sheets ---- */
+.app .modal-backdrop{background:#050d0bcc}
+.app .modal{background:var(--surface);color:var(--ivory);border:1px solid #ffffff12;box-shadow:0 30px 80px #000c}
+.app .modal > p,.app .modal p{color:#d9d2bd}
+.app .modal .small,.app .small{color:var(--faint);font-size:13px}
+.app .eyebrow{color:var(--gold)}
+.app .modal h3{color:var(--gold);font-size:16px;margin-top:20px}
+.app .close-modal{color:var(--muted)}
+.app .option{background:#ffffff0a;border:1px solid #ffffff1c;color:var(--ivory)}
+.app .option:hover{border-color:#d8ad5c88}
+.app .chosen,.app .option.chosen{background:#d8ad5c22;border-color:var(--gold);color:var(--ivory)}
+.app .confidence-row .option span{color:var(--muted)}
+.app .confidence-row .option strong{color:var(--ivory)}
+.app .confidence-row .option:active{background:var(--gold);color:#1a1405}
+.reveal-meta{color:var(--muted)!important;font-size:14px!important}
+.reveal-number small{color:var(--faint)!important}
+.reveal-number.positive{color:var(--jade)!important}
+.reveal-number.negative{color:var(--rust)!important}
+.app .verdict{color:var(--ivory)}
+.reveal-modal.win .verdict{color:var(--jade)!important}
+.reveal-modal.lose .verdict{color:var(--rust)!important}
+.story summary,.recommendations details summary{color:var(--gold)!important}
+.app .story p{color:#d9d2bd}
+.switch{background:#ffffff0a!important;color:var(--ivory)!important}
+.switch i{background:#ffffff26!important}
+.switch.on i{background:var(--gold)!important}
+.sound-row input,.app input[type="range"]{accent-color:var(--gold)}
+.app .toast{background:var(--ivory);color:#13241e;box-shadow:0 10px 30px #0008}
+.app .pause-strip{background:var(--gold);color:#1a1405}
+.app .pause-strip button{color:#1a1405;border-color:#1a140544}
+
+/* ---- Profile ---- */
+.app .paper-screen{background:transparent;color:var(--ivory)}
+.persona-card{background:linear-gradient(150deg,#1f3d32,#122620)!important;border:1px solid #d8ad5c40;box-shadow:0 24px 60px #0008!important}
+.persona-kicker{color:var(--gold)!important}
+.app .persona-card h1{color:var(--ivory);font-size:44px}
+.app .persona-card .persona-description{color:#cfd6c4;font-size:16px}
+.app .result-summary span{background:#ffffff0d;color:var(--muted);font-size:13px}
+.result-summary b{color:var(--ivory)!important}
+.app .persona-card .result-seal{background:var(--rust)}
+.app .task-cta{background:var(--gold);border-color:var(--gold);color:#1a1405;font-size:18px}
+.app .section-title{color:var(--ivory)}
+.app .section-title small{color:var(--faint);font-size:13px}
+.app .dimension-list{border-top-color:#ffffff14}
+.app .dimension{border-bottom-color:#ffffff14;color:var(--ivory)}
+.dimension summary strong{color:var(--ivory);font-size:17px!important}
+.app .dimension summary .dimension-score{color:var(--gold)}
+.app .dimension summary .dim-track{background:#ffffff14}
+.dimension summary .dim-track i{background:var(--gold)!important}
+.app .dimension summary .confidence{color:var(--faint);font-size:13px}
+.app .dim-kind{background:#6cc09322;color:var(--jade);font-size:12px}
+.app .dim-kind.ability{background:#df6a4722;color:#f0957a}
+.app .dimension.is-uncertain .dimension-score{color:var(--faint)}
+.app .dimension-body .evidence{border-left-color:#d8ad5c66;color:#d9d2bd;font-size:15px}
+.app .uncertain{color:var(--gold)}
+.app .revision-button{color:var(--rust)}
+.app .conflict,.app .revision-history{background:#ffffff0a;border:1px solid #ffffff14;color:var(--ivory)}
+.app .conflict h3,.app .revision-history h3{color:var(--gold)}
+.app .recommendations article{background:var(--card);border-color:#ffffff14}
+.app .resource-top{color:var(--gold)}
+.app .recommendations h3 a{color:var(--ivory)}
+.app .recommendations article>p,.app .recommendations details p{color:#cfd6c4;font-size:15px}
+.app .recommendations details small{color:var(--faint)}
+.why-not{color:var(--faint)!important;font-size:14px!important}
+.app .primary.ghost{background:transparent;color:var(--gold);border-color:var(--gold)}
+.app .export-actions button{background:#ffffff0a;color:var(--ivory);font-size:15px}
+.app .partner-links{border-top-color:#ffffff14}
+.app .partner-links a,.app .partner-links button{color:var(--muted);font-size:14px}
+
+/* ---- Task view ---- */
+.app .task-screen{color:var(--ivory)}
+.app .task-screen p,.app .task-screen li{color:#d9d2bd;font-size:16px}
+.app .muted{color:var(--faint)}
+.app .result-note,.app .completion,.app .prompt,.app .quiz-item,.app .next-task{background:var(--card);border-color:#ffffff14;color:var(--ivory)}
+.app .stat-row{border-color:#ffffff14}
+.app .stat-row strong{color:var(--ivory)}
+.app .stat-row > span{color:var(--muted)}
+.app table{color:var(--ivory)}
+.app th{color:var(--gold);border-color:#ffffff1c;background:transparent}
+.app td{border-color:#ffffff12}
+.app .sample-tabs button{color:var(--muted)}
+.app .task-controls label{color:var(--muted)}
+
+/* ---- Online panel ---- */
+.app .online-section{border-top-color:#ffffff14}
+.app .online-section select,.app .online-section textarea{background:#0b1a16;color:var(--ivory);border-color:#ffffff22;font-size:15px}
+.app .online-section label{font-size:14px;color:var(--muted)}
+.app .coach-answer{background:#0f211b;font-size:15px}
+.app .partner-note{color:var(--gold);font-size:13px!important}
+.app .inline-error{color:var(--rust);font-size:14px}
+.app .panda-resource-links{font-size:14px}
+
+/* Hide the old base-layer footer if anything still renders it. */
+.app .footer{display:none}
+.brand-icon{width:38px;height:38px;border-radius:10px;box-shadow:0 0 0 1px #ffffff1a,0 4px 12px #0006}
+
+/* ---- Home: one moonlit scene, icon, title, one button ---- */
+.app.mode-welcome{height:100dvh;overflow:hidden}
+.app.mode-welcome .topbar{position:absolute;inset:0 0 auto;background:transparent;border:0;backdrop-filter:none;z-index:5}
+.app.mode-welcome .brand{visibility:hidden}
+.app .welcome{flex:1;display:flex;align-items:stretch;justify-content:center;background:var(--bg);overflow:hidden;position:relative}
+.app .welcome-art{position:absolute;inset:0;background:url("/assets/art/background.webp") 50% 0/cover;opacity:.95;animation:drift 30s ease-in-out infinite alternate}
+.app .welcome-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0b1a1640 0%,#0b1a1600 30%,#0b1a16b8 62%,#0b1a16 82%)}
+.app .welcome.asking .welcome-art{filter:blur(6px) brightness(.55);transform:scale(1.08);transition:filter .5s,transform .6s var(--ease-out)}
+.welcome-moon{position:absolute;left:50%;top:14%;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:radial-gradient(#d8ad5c2e,#d8ad5c00 65%);pointer-events:none;animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.55;transform:scale(1.08)}}
+.welcome-hero,.welcome-ask{position:relative;z-index:1;width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 28px calc(34px + env(safe-area-inset-bottom))}
+.welcome-hero>*{animation:rise .7s var(--ease-out) both}
+.welcome-hero>:nth-child(2){animation-delay:.08s}.welcome-hero>:nth-child(3){animation-delay:.14s}.welcome-hero>:nth-child(4){animation-delay:.2s}.welcome-hero>:nth-child(5){animation-delay:.28s}.welcome-hero>:nth-child(6){animation-delay:.36s}
+.welcome-icon{width:88px;height:88px;border-radius:22px;box-shadow:0 0 0 1px #ffffff1f,0 16px 40px #000a,0 0 60px #d8ad5c33;margin-bottom:22px}
+.welcome-hero h1{font-size:76px;line-height:1;letter-spacing:16px;margin:0 0 0 16px;color:var(--ivory);font-weight:500;text-shadow:0 8px 30px #000a}
+.welcome-en{font-family:Georgia,serif;font-size:14px;letter-spacing:7px;color:var(--gold);margin:16px 0 0}
+.welcome-line{font-size:18px;letter-spacing:3px;color:#d9d2bd;margin:22px 0 36px}
+.welcome-actions{width:100%;display:flex;flex-direction:column;gap:12px}
+.app .welcome .begin{width:100%;min-height:62px;border-radius:999px;font-size:20px;letter-spacing:8px;padding-left:8px;box-shadow:0 14px 36px #d8ad5c40;max-width:none;margin:0}
+.app .welcome .begin:active{transform:scale(.98)}
+.app .ghost-button{min-height:52px;border-radius:999px;border:1px solid #ffffff2a;background:#ffffff0a;color:var(--ivory);font-size:16px;letter-spacing:2px;width:100%}
+.app .ghost-button:active{background:#ffffff18}
+.app .welcome-partner{margin-top:26px;font-size:13px;letter-spacing:1px;color:var(--faint);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.app .welcome-partner b{font-family:Georgia,serif;color:var(--muted);font-size:15px}
+.welcome-ask{justify-content:center;animation:rise .45s var(--ease-out) both}
+.ask-step{font-family:Georgia,serif;font-size:14px;letter-spacing:4px;color:var(--gold);margin:0}
+.app .welcome-ask h2{font-size:34px;letter-spacing:4px;margin:10px 0 28px;color:var(--ivory)}
+.ask-options{width:100%;display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.app .ask-option{display:flex;align-items:center;justify-content:space-between;min-height:68px;padding:0 22px;border-radius:18px;background:#12251fd9;border:1px solid #ffffff1c;color:var(--ivory);text-align:left;backdrop-filter:blur(8px);transition:transform .12s,border-color .2s,background .2s}
+.app .ask-option strong{font-size:22px;font-weight:500;letter-spacing:3px}
+.app .ask-option span{font-size:15px;color:var(--muted)}
+.app .ask-option:hover{border-color:#d8ad5c88}
+.app .ask-option:active{transform:scale(.98);background:var(--gold);color:#1a1405}
+.app .ask-option:active span{color:#1a1405}
+.app .welcome .demo-label{margin-top:4px;font-size:14px}
+@media (max-height:700px){
+ .welcome-icon{width:68px;height:68px;border-radius:18px;margin-bottom:14px}
+ .welcome-hero h1{font-size:60px}
+ .welcome-line{margin:16px 0 24px;font-size:17px}
+ .app .welcome .begin{min-height:56px}
+ .app .welcome-ask h2{font-size:28px;margin-bottom:18px}
+ .app .ask-option{min-height:58px}
+ .ask-options{gap:9px}
+}
+@media (min-width:850px){
+ .app .welcome-art{inset:0;animation:none}
+ .app .welcome-hero{justify-content:center}
+}
+
+/* ---- Generated art wiring ---- */
+.app .welcome-art{background-image:url("/assets/art/home.webp");background-position:50% 0;background-size:cover}
+.app .welcome-art:after{background:linear-gradient(180deg,#0b1a1600 0%,#0b1a1600 42%,#0b1a16c0 60%,#0b1a16 76%)}
+.welcome-moon{display:none}
+.welcome-hero h1{font-size:84px}
+.app .card-back{background:url("/assets/art/cardback.webp") center/cover;border:1px solid #d8ad5c55;opacity:.9}
+.persona-card{padding-top:20px}
+.persona-emblem{display:block;width:112px;height:112px;border-radius:50%;margin:0 0 12px;box-shadow:0 0 0 1px #d8ad5c66,0 12px 30px #0008;animation:pop-in .6s var(--spring) .1s both}
+@media (min-width:850px){.app .welcome-art{background-size:auto 100%;background-repeat:no-repeat;background-color:#0b1a16}}
+@media (max-height:700px){.welcome-hero h1{font-size:64px}.welcome-line{margin:14px 0 22px}}

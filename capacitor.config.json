@@ -1,0 +1,7 @@
+{
+  "appId": "top.edsionc.quantthrone",
+  "appName": "量权",
+  "webDir": "dist",
+  "android": { "backgroundColor": "#183b34" },
+  "server": { "androidScheme": "https" }
+}

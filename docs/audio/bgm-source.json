@@ -1,0 +1,35 @@
+{
+  "id": "fd21fa5d6a356e3358785a2f",
+  "name": "cozy_puzzle_in-game_1_bpm118",
+  "path": "raw/opengameart/theme_puzzle_bgm/cozy_puzzle_in-game_1_bpm118.mp3",
+  "kind": "bgm",
+  "source": "opengameart",
+  "pack": "theme_puzzle_bgm",
+  "tags": [
+    "music",
+    "puzzle",
+    "cozy",
+    "cooking"
+  ],
+  "themes": [
+    "puzzle",
+    "cozy",
+    "cooking"
+  ],
+  "format": "mp3",
+  "size": 5209989,
+  "sha256": "534ce0956812e31814605b33216fabfa82ea5ef39375197573806659ab6fec21",
+  "duration": 130.17,
+  "quality": 100,
+  "sample_rate": 44100,
+  "channels": 2,
+  "license": "CC0",
+  "author": "MintoDog",
+  "source_url": "https://opengameart.org/content/cozy-puzzle-in-game-1",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_required": false,
+  "attribution": "theme_puzzle_bgm / cozy_puzzle_in-game_1_bpm118 — MintoDog. Source: https://opengameart.org/content/cozy-puzzle-in-game-1. License: CC0 (https://creativecommons.org/publicdomain/zero/1.0/). Original audio, no changes.",
+  "issues": [],
+  "localTarget": ".work/audio-library/raw/opengameart/theme_puzzle_bgm/cozy_puzzle_in-game_1_bpm118.mp3",
+  "selectionReason": "现有Sound Skill库中，质量100、CC0的cozy/puzzle配乐；轻松、可循环，用较低音量作为竹林经营背景，不宣称东方原生乐器。"
+}

@@ -1,0 +1,34 @@
+{
+  "records": [
+    {
+      "id": "welcome",
+      "text": "欢迎来到量权。掌舵竹林资本，在真实行情中认识自己的选择。",
+      "model": "qwen3-tts-1.7b",
+      "voice": "Uncle_Fu",
+      "service": "https://edsionc.top/api/v1/audio/speech",
+      "generatedAt": "2026-10-31T21:24:52.798Z",
+      "target": "public/assets/voice/welcome.m4a",
+      "authorization": "User-authorized private EC Studio service; stock voice, no personal voice cloning"
+    },
+    {
+      "id": "market",
+      "text": "先判断，再揭晓。左滑减仓，右滑加仓，上滑观望。",
+      "model": "qwen3-tts-1.7b",
+      "voice": "Uncle_Fu",
+      "service": "https://edsionc.top/api/v1/audio/speech",
+      "generatedAt": "2026-10-31T21:24:57.910Z",
+      "target": "public/assets/voice/market.m4a",
+      "authorization": "User-authorized private EC Studio service; stock voice, no personal voice cloning"
+    },
+    {
+      "id": "profile",
+      "text": "每个选择都有迹可循。这是你的量化画像，也是一段新探索的开始。",
+      "model": "qwen3-tts-1.7b",
+      "voice": "Uncle_Fu",
+      "service": "https://edsionc.top/api/v1/audio/speech",
+      "generatedAt": "2026-10-31T21:25:02.736Z",
+      "target": "public/assets/voice/profile.m4a",
+      "authorization": "User-authorized private EC Studio service; stock voice, no personal voice cloning"
+    }
+  ]
+}

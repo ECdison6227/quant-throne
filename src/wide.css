@@ -1,0 +1,10 @@
+/* Wide-screen fit: art bleeds to every edge on landscape/desktop; content columns keep their own widths (never stretched). */
+@media (min-width:700px) and (min-aspect-ratio:3/4){
+ .app{max-width:none;width:100%}
+ .app::before{content:"";position:fixed;inset:-60px;z-index:-1;pointer-events:none;background:url("/assets/art/home.webp") center 30%/cover no-repeat;filter:blur(36px) saturate(1.15) brightness(.42);transform:translateZ(0)}
+ .app:not(.mode-welcome)::before{background-image:url("/assets/art/background.webp");filter:blur(40px) saturate(1.05) brightness(.28)}
+ .app .welcome{background:transparent}
+ .app .welcome-art{animation:none;inset:0 auto 0 50%;width:min(100%,calc(100dvh * 900 / 1350 * 1.25));transform:translateX(-50%);background-size:cover;background-position:50% 0;background-color:transparent;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%)}
+ .app .welcome-art:after{background:linear-gradient(180deg,#0b1a1600 0%,#0b1a1600 46%,#0b1a16b0 64%,#0b1a16 80%)}
+ .app .topbar{background:#0b1a1699}
+}

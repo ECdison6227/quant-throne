@@ -1,0 +1,12 @@
+[
+  {"id":"e1","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2015-06-12","title":"连涨之后，还追吗？","story":"2015 年 6 月，沪深300经历大幅上涨后出现持续调整。本片段取 6 月 12 日收盘为决策点。","style":"trend"},
+  {"id":"e2","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2015-12-31","title":"平静的曲线","story":"2015 年最后一个交易日之后，2016 年 1 月 A 股经历剧烈波动。这里展示的是事前可见的价格，不包含事后信息。","style":"risk"},
+  {"id":"e3","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2019-01-03","title":"寒冬里的筹码","story":"2018 年市场下跌后，2019 年初沪深300仍处于低位。本回合考察对下跌与反转的选择。","style":"value"},
+  {"id":"e4","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2020-03-23","title":"风暴尚未过去","story":"2020 年 3 月全球市场波动加大。沪深300在 3 月 23 日下跌后，未来的路径在当时仍然未知。","style":"reversal"},
+  {"id":"e5","symbol":"600519.SH","name":"贵州茅台","assetType":"stock","decisionDate":"2021-02-18","title":"最拥挤的交易","story":"2021 年春节后，贵州茅台股价在高位回落。本片段使用 Panda Data 前复权日线。","style":"trend"},
+  {"id":"e6","symbol":"601088.SH","name":"中国神华","assetType":"stock","decisionDate":"2022-04-26","title":"慢生意的价值","story":"2022 年 4 月市场调整中，中国神华为观察防御性价格表现提供一个历史样本。当前数据包只含价格与成交量，不据此推断股息率或基本面。","style":"value"},
+  {"id":"e7","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2024-09-23","title":"沉默的价格","story":"2024 年 9 月 24 日政策发布前一交易日，沪深300仍未呈现随后几日的快速上涨。回合中不预告政策。","style":"event"},
+  {"id":"r1","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2018-01-26","title":"补充观察 · 高处的风","story":"本次补充观察使用 2018 年 1 月 26 日的沪深300价格窗口，未参与本局此前判断。","style":"trend"},
+  {"id":"r2","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2020-07-13","title":"补充观察 · 热度之后","story":"本次补充观察使用 2020 年 7 月 13 日的沪深300价格窗口，未参与本局此前判断。","style":"trend"},
+  {"id":"r3","symbol":"000300.SH","name":"沪深300","assetType":"index","decisionDate":"2022-10-31","title":"补充观察 · 寒意渐深","story":"本次补充观察使用 2022 年 10 月 31 日的沪深300价格窗口，未参与本局此前判断。","style":"reversal"}
+]
