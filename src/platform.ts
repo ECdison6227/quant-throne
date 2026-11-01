@@ -1,4 +1,5 @@
 import {Capacitor} from '@capacitor/core';
+import {AppLauncher} from '@capacitor/app-launcher';
 import {Browser} from '@capacitor/browser';
 import {Directory,Filesystem} from '@capacitor/filesystem';
 import {Share} from '@capacitor/share';
@@ -7,9 +8,11 @@ export async function sendProfileToVivic(profile:unknown){
  const popup=nativePlatform?null:window.open('about:blank','quant-throne-vivic');
  try{const response=await fetch('https://edsionc.top/quant-throne/api/transfer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({profile}),signal:AbortSignal.timeout(20000)});const data=await response.json();if(!response.ok||!data.ok||typeof data.token!=='string')throw Error('transfer-unavailable');
   const url='https://vivic.edsionc.top/?quant-throne=1#quant-transfer='+encodeURIComponent(data.token);
-  if(nativePlatform)await Browser.open({url});else if(popup)popup.location.href=url;else location.href=url;
+  if(nativePlatform)await openNative(url);else if(popup)popup.location.href=url;else location.href=url;
  }catch(error){popup?.close();throw error;}
 }
+// APK: ACTION_VIEW so an installed Vivic app (App Links on vivic.edsionc.top) imports directly; otherwise the system browser opens it.
+async function openNative(url:string){try{const {completed}=await AppLauncher.openUrl({url});if(completed)return;}catch{}await Browser.open({url});}
 export async function saveFile(data:BlobPart,name:string,type:string){
  const blob=new Blob([data],{type});
  if(Capacitor.isNativePlatform()){
